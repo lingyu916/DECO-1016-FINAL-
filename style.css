@@ -1,0 +1,173 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color:#BA0419;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.navbar-item {
+  margin: 0.5rem;
+  width: 100%;
+}
+.calwidth {
+  width: auto;
+  height: auto;
+  float:left; }
+
+.home-link,
+.navbar-link {
+  color: #D9D9D9;
+  text-decoration: none;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+}
+
+.home-link:hover {
+  color: #FFFFFF;
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  transition: all 0.7s ease;
+}
+.navbar-link:hover {
+  color: #b44141;
+  }
+
+  
+
+/* NAVBAR TOGGLE BUTTON */
+/* Styles for the 'hamburger style menu button */
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* Reusable style for each menu bar */
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: #f7f7f7;
+}
+/* Set the colour of the menu bars when hovered */
+#navbar-toggle:hover .icon-bar {
+  background-color: #c9c5c5;
+}
+/* Set the icon bars for when the menu is active
+    i.e. when the cross to close is showing */
+#navbar-toggle.active .icon-bar:first-child,
+#navbar-toggle.active .icon-bar:last-child {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+/* Rotate the top menu bar */
+#navbar-toggle.active .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+/* Hide the middle menu bar */
+#navbar-toggle.active .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+/* Rotate the bottom menu bar */
+#navbar-toggle.active .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+
+
+
+#navbar-menu {
+  position: fixed;
+  width: 100%;
+  top: 70px; /* Same as the height of the header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+#navbar-toggle.active + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background-color:#ba051a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transform-origin: top;
+  transform: scaleY(0%);
+  transition: all 0.3s ease-in-out;
+}
+
+#navbar-toggle.active + #navbar-menu .navbar-links {
+  transform: scaleY(100%);
+}
+
+/* Media Query for larger devices */
+@media screen and (min-width: 600px) {
+
+  /* Hide the menu toggle button */
+  #navbar-toggle{
+    display: none;
+  }
+
+  /* Set the menu to it's normal display type and position */
+  #navbar-menu{
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+
+  /* Set the menu list element to it's normal position, using flexbox to horizontally layout the link items */
+  .navbar-links {
+    margin: 0;
+    padding: 0;
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(100%);
+    transition: none;
+  }
+  /* 1111
+
+  
+
+
+
+
+
+
